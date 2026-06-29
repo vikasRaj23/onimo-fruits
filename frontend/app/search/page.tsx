@@ -4,4 +4,4 @@ export default function SearchPage() {
       <h1>Search Page</h1>
     </div>
   );
-}/
+}
