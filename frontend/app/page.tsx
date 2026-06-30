@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Categories from "../components/Categories";
 import ProductCard from "../components/ProductCard";
+import FloatingCart from "../components/FloatingCart";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
         search={search}
         category={category}
       />
+
+      <FloatingCart />
 
       <Footer />
     </>
