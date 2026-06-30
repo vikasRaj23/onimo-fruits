@@ -16,10 +16,12 @@ export default function Header() {
       style={{
         background: "#16a34a",
         color: "white",
-        padding: "15px 30px",
+        padding: "15px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        flexWrap: "wrap",
+        gap: "12px",
       }}
     >
       <Link
@@ -34,7 +36,15 @@ export default function Header() {
         🍎 ONIMO FRUITS
       </Link>
 
-      <div style={{ display: "flex", gap: "25px", alignItems: "center" }}>
+      <nav
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "15px",
+        }}
+      >
         <Link href="/" style={{ color: "white", textDecoration: "none" }}>
           🏠 Home
         </Link>
@@ -53,11 +63,14 @@ export default function Header() {
             color: "white",
             textDecoration: "none",
             fontWeight: "bold",
+            background: "#15803d",
+            padding: "8px 14px",
+            borderRadius: "10px",
           }}
         >
           🛒 Cart ({totalItems})
         </Link>
-      </div>
+      </nav>
     </header>
   );
 }
