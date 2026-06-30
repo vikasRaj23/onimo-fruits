@@ -9,7 +9,6 @@ export default function Hero({
   search,
   setSearch,
 }: HeroProps) {
-
   const scrollToProducts = () => {
     const section = document.getElementById("products");
     if (section) {
@@ -24,23 +23,27 @@ export default function Hero({
       style={{
         background: "linear-gradient(135deg,#16a34a,#22c55e,#4ade80)",
         color: "white",
-        padding: "80px 20px",
+        padding: "50px 20px",
         textAlign: "center",
       }}
     >
       <h1
         style={{
-          fontSize: "60px",
-          marginBottom: "20px",
+          fontSize: "42px",
+          fontWeight: "bold",
+          marginBottom: "15px",
+          lineHeight: "1.3",
         }}
       >
-        🍎 Fresh Fruits Delivered in 10 Minutes
+        🍎 Fresh Fruits <br />
+        Delivered in <br />
+        <span style={{ color: "#FFE600" }}>10 Minutes</span>
       </h1>
 
       <p
         style={{
-          fontSize: "24px",
-          marginBottom: "35px",
+          fontSize: "20px",
+          marginBottom: "25px",
         }}
       >
         100% Fresh • Best Quality • Lowest Price
@@ -48,16 +51,16 @@ export default function Hero({
 
       <input
         type="text"
-        placeholder="Search Fruits, Vegetables..."
+        placeholder="🔍 Search Fruits & Vegetables..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         style={{
-          width: "60%",
-          maxWidth: "700px",
-          padding: "18px",
+          width: "100%",
+          maxWidth: "500px",
+          padding: "16px",
           borderRadius: "12px",
           border: "none",
-          fontSize: "18px",
+          fontSize: "17px",
           outline: "none",
         }}
       />
@@ -67,15 +70,16 @@ export default function Hero({
       <button
         onClick={scrollToProducts}
         style={{
-          marginTop: "30px",
-          padding: "18px 50px",
-          fontSize: "20px",
+          marginTop: "25px",
+          padding: "16px 40px",
+          fontSize: "18px",
           border: "none",
-          borderRadius: "10px",
-          background: "#ffcc00",
+          borderRadius: "12px",
+          background: "#FFD700",
           color: "#000",
           cursor: "pointer",
           fontWeight: "bold",
+          boxShadow: "0 6px 15px rgba(0,0,0,.25)",
         }}
       >
         🛒 Shop Now
