@@ -30,15 +30,16 @@ export default function ProductCard({
       id="products"
       style={{
         padding: "15px",
-        background: "#f5f5f5",
+        background: "#f3f4f6",
       }}
     >
       <h2
         style={{
           textAlign: "center",
-          fontSize: "32px",
-          marginBottom: "20px",
+          fontSize: "34px",
           color: "#166534",
+          marginBottom: "20px",
+          fontWeight: "bold",
         }}
       >
         🛒 Fresh Products
@@ -47,8 +48,8 @@ export default function ProductCard({
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit,minmax(170px,1fr))",
-          gap: "15px",
+          gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+          gap: "18px",
         }}
       >
         {filteredProducts.length === 0 ? (
@@ -59,14 +60,17 @@ export default function ProductCard({
               key={item.id}
               style={{
                 background: "#fff",
-                borderRadius: "18px",
-                padding: "15px",
-                boxShadow: "0 5px 15px rgba(0,0,0,.12)",
+                borderRadius: "20px",
+                padding: "18px",
                 textAlign: "center",
                 position: "relative",
-                transition: "0.3s",
+                boxShadow: "0 10px 25px rgba(0,0,0,.08)",
+                transition: "all .3s ease",
+                cursor: "pointer",
               }}
             >
+              {/* Discount */}
+
               <span
                 style={{
                   position: "absolute",
@@ -74,7 +78,7 @@ export default function ProductCard({
                   left: "10px",
                   background: "#ef4444",
                   color: "white",
-                  padding: "4px 8px",
+                  padding: "5px 10px",
                   borderRadius: "20px",
                   fontSize: "11px",
                   fontWeight: "bold",
@@ -83,6 +87,8 @@ export default function ProductCard({
                 {item.discount}
               </span>
 
+              {/* Badge */}
+
               <span
                 style={{
                   position: "absolute",
@@ -90,7 +96,7 @@ export default function ProductCard({
                   right: "10px",
                   background: "#16a34a",
                   color: "white",
-                  padding: "4px 8px",
+                  padding: "5px 10px",
                   borderRadius: "20px",
                   fontSize: "11px",
                   fontWeight: "bold",
@@ -99,21 +105,24 @@ export default function ProductCard({
                 {item.badge}
               </span>
 
+              {/* Image */}
+
               <img
                 src={item.image}
                 alt={item.name}
                 style={{
-                  width: "120px",
-                  height: "120px",
+                  width: "130px",
+                  height: "130px",
                   objectFit: "contain",
-                  marginTop: "20px",
+                  margin: "20px auto 10px",
+                  transition: ".3s",
                 }}
               />
 
               <h3
                 style={{
-                  marginTop: "10px",
-                  marginBottom: "5px",
+                  marginBottom: "8px",
+                  fontSize: "20px",
                 }}
               >
                 {item.name}
@@ -129,19 +138,12 @@ export default function ProductCard({
                 {item.category}
               </p>
 
-              <p
-                style={{
-                  marginBottom: "5px",
-                }}
-              >
-                {item.rating}
-              </p>
+              <p>{item.rating}</p>
 
               <p
                 style={{
-                  color: "green",
+                  color: "#15803d",
                   fontWeight: "bold",
-                  marginBottom: "8px",
                 }}
               >
                 ✅ {item.stock}
@@ -150,15 +152,16 @@ export default function ProductCard({
               <h2
                 style={{
                   color: "#16a34a",
-                  fontSize: "28px",
-                  margin: "10px 0",
+                  margin: "12px 0",
+                  fontSize: "30px",
                 }}
               >
                 ₹{item.price}
+
                 <span
                   style={{
                     fontSize: "15px",
-                    color: "#555",
+                    color: "#777",
                   }}
                 >
                   {" "}
@@ -170,14 +173,18 @@ export default function ProductCard({
                 onClick={() => addToCart(item)}
                 style={{
                   width: "100%",
-                  padding: "12px",
-                  background: "#16a34a",
-                  color: "white",
+                  padding: "13px",
                   border: "none",
-                  borderRadius: "10px",
-                  cursor: "pointer",
-                  fontSize: "15px",
+                  borderRadius: "12px",
+                  background:
+                    "linear-gradient(90deg,#16a34a,#22c55e)",
+                  color: "white",
                   fontWeight: "bold",
+                  fontSize: "16px",
+                  cursor: "pointer",
+                  boxShadow:
+                    "0 6px 15px rgba(34,197,94,.35)",
+                  transition: ".3s",
                 }}
               >
                 🛒 Add To Cart

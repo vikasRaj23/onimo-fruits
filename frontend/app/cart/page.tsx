@@ -18,6 +18,7 @@ export default function CartPage() {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [address, setAddress] = useState("");
+  const [distance, setDistance] = useState("1");
   
 
 
@@ -34,7 +35,12 @@ export default function CartPage() {
 
   const finalSubtotal = total - discount;
 
-  const delivery = finalSubtotal >= 299 ? 0 : 40;
+  const delivery =
+  distance === "1"
+    ? 10
+    : distance === "2"
+    ? 20
+    : 40;
 
   const grandTotal = finalSubtotal + delivery;
 
@@ -73,7 +79,7 @@ Subtotal : ₹${total}
 Discount : ₹${discount}
 
 Delivery : ${
-    delivery === 0 ? "FREE" : "₹" + delivery
+    `₹${delivery}`
   }
 
 Grand Total : ₹${grandTotal}
@@ -227,7 +233,7 @@ Thank You ❤️`;
 
       <h3>
         Delivery :
-        {delivery === 0 ? " FREE 🎉" : ` ₹${delivery}`}
+        `₹${delivery}`
       </h3>
 
       <h2
@@ -274,7 +280,22 @@ Thank You ❤️`;
           padding: "12px",
           marginBottom: "20px",
         }}
-      />
+      /><h3>📍 Delivery Distance</h3>
+
+<select
+  value={distance}
+  onChange={(e) => setDistance(e.target.value)}
+  style={{
+    width: "100%",
+    padding: "12px",
+    marginBottom: "20px",
+    borderRadius: "8px",
+  }}
+>
+  <option value="1">0 - 1 KM (₹10)</option>
+  <option value="2">1 - 2 KM (₹20)</option>
+  <option value="3">2 KM+ (₹40)</option>
+</select>
 
       <h3 style={{ marginTop: "20px" }}>
   💳 Select Payment Method
